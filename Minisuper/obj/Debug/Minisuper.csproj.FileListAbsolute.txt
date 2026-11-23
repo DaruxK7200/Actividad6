@@ -1,0 +1,12 @@
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\bin\Debug\Minisuper.exe.config
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\bin\Debug\Minisuper.exe
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\bin\Debug\Minisuper.pdb
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.csproj.AssemblyReference.cache
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.Form1.resources
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.FrmNuevoProducto.resources
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.Properties.Resources.resources
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.csproj.GenerateResource.cache
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.csproj.CoreCompileInputs.cache
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.exe
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.pdb
+C:\Universidad\SextoSemestre\DesarrolloSistemas\practicos\Minisuper\Minisuper\obj\Debug\Minisuper.exe.config
