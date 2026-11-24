@@ -45,13 +45,22 @@
             this.CPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalFinal = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.numDescuento = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblMontoDescuento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,14 +77,14 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(104, 66);
+            this.dtpFecha.Location = new System.Drawing.Point(137, 132);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(286, 20);
             this.dtpFecha.TabIndex = 1;
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(104, 112);
+            this.txtCliente.Location = new System.Drawing.Point(137, 178);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(286, 20);
             this.txtCliente.TabIndex = 2;
@@ -84,7 +93,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 66);
+            this.label2.Location = new System.Drawing.Point(66, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 0;
@@ -94,7 +103,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 112);
+            this.label3.Location = new System.Drawing.Point(61, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 0;
@@ -103,7 +112,7 @@
             // cmbProductos
             // 
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(104, 159);
+            this.cmbProductos.Location = new System.Drawing.Point(137, 225);
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(286, 21);
             this.cmbProductos.TabIndex = 3;
@@ -112,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 159);
+            this.label4.Location = new System.Drawing.Point(47, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 0;
@@ -120,9 +129,9 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 203);
+            this.numericUpDown1.Location = new System.Drawing.Point(137, 269);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(286, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(153, 20);
             this.numericUpDown1.TabIndex = 4;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -134,7 +143,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 207);
+            this.label5.Location = new System.Drawing.Point(47, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 0;
@@ -147,7 +156,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(243, 254);
+            this.btnAgregar.Location = new System.Drawing.Point(276, 312);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(147, 23);
             this.btnAgregar.TabIndex = 5;
@@ -169,7 +178,7 @@
             this.CCantidad,
             this.CPrecio,
             this.CSubtotal});
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(17, 296);
+            this.dgvDetalleVenta.Location = new System.Drawing.Point(18, 343);
             this.dgvDetalleVenta.MultiSelect = false;
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.RowHeadersVisible = false;
@@ -208,22 +217,22 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label6.Location = new System.Drawing.Point(550, 463);
+            this.label6.Location = new System.Drawing.Point(474, 505);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 30);
+            this.label6.Size = new System.Drawing.Size(105, 30);
             this.label6.TabIndex = 0;
-            this.label6.Text = "TOTAL:";
+            this.label6.Text = "SubTotal:";
             // 
-            // lblTotal
+            // lblTotalFinal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblTotal.Location = new System.Drawing.Point(663, 463);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(89, 30);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Bs. 0.00";
+            this.lblTotalFinal.AutoSize = true;
+            this.lblTotalFinal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFinal.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblTotalFinal.Location = new System.Drawing.Point(587, 572);
+            this.lblTotalFinal.Name = "lblTotalFinal";
+            this.lblTotalFinal.Size = new System.Drawing.Size(89, 30);
+            this.lblTotalFinal.TabIndex = 0;
+            this.lblTotalFinal.Text = "Bs. 0.00";
             // 
             // btnQuitar
             // 
@@ -232,7 +241,7 @@
             this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.Location = new System.Drawing.Point(243, 538);
+            this.btnQuitar.Location = new System.Drawing.Point(249, 566);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(127, 23);
             this.btnQuitar.TabIndex = 5;
@@ -249,7 +258,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 538);
+            this.btnConfirmar.Location = new System.Drawing.Point(18, 566);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(127, 23);
             this.btnConfirmar.TabIndex = 5;
@@ -269,12 +278,97 @@
             this.panelTitulo.Size = new System.Drawing.Size(1084, 55);
             this.panelTitulo.TabIndex = 7;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(41, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Vendedor:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Descuento (%):";
+            // 
+            // txtVendedor
+            // 
+            this.txtVendedor.Location = new System.Drawing.Point(137, 61);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(286, 20);
+            this.txtVendedor.TabIndex = 2;
+            // 
+            // numDescuento
+            // 
+            this.numDescuento.Location = new System.Drawing.Point(137, 96);
+            this.numDescuento.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numDescuento.Name = "numDescuento";
+            this.numDescuento.Size = new System.Drawing.Size(153, 20);
+            this.numDescuento.TabIndex = 8;
+            this.numDescuento.ValueChanged += new System.EventHandler(this.numDescuento_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label9.Location = new System.Drawing.Point(457, 535);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 30);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Descuento:";
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblSubtotal.Location = new System.Drawing.Point(587, 505);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(89, 30);
+            this.lblSubtotal.TabIndex = 0;
+            this.lblSubtotal.Text = "Bs. 0.00";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label11.Location = new System.Drawing.Point(430, 572);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 30);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "TOTAL FINAL:";
+            // 
+            // lblMontoDescuento
+            // 
+            this.lblMontoDescuento.AutoSize = true;
+            this.lblMontoDescuento.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoDescuento.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblMontoDescuento.Location = new System.Drawing.Point(587, 535);
+            this.lblMontoDescuento.Name = "lblMontoDescuento";
+            this.lblMontoDescuento.Size = new System.Drawing.Size(89, 30);
+            this.lblMontoDescuento.TabIndex = 0;
+            this.lblMontoDescuento.Text = "Bs. 0.00";
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 611);
+            this.Controls.Add(this.numDescuento);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.dgvDetalleVenta);
             this.Controls.Add(this.btnConfirmar);
@@ -282,13 +376,20 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.cmbProductos);
+            this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblMontoDescuento);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblSubtotal);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblTotalFinal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Name = "FrmVentas";
             this.Text = "FrmVentas";
@@ -296,6 +397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
             this.panelTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,9 +422,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn CSubtotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblTotalFinal;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtVendedor;
+        private System.Windows.Forms.NumericUpDown numDescuento;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblMontoDescuento;
     }
 }

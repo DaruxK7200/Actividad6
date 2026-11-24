@@ -47,7 +47,6 @@ namespace Minisuper
                 DataGridViewAutoSizeColumnsMode.Fill;
             CargarProductos();
         }
-        private decimal total = 0;
 
         private void dgvDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -90,6 +89,8 @@ namespace Minisuper
             btnQuitar.BackColor = Color.Firebrick;
         }
 
+        private decimal totalFinal = 0;
+        private decimal subtotal = 0;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Producto producto =
@@ -97,33 +98,37 @@ namespace Minisuper
 
             int cantidad = (int)numericUpDown1.Value;
 
-            decimal subtotal =
-                producto.Precio * cantidad;
+            decimal subtotalProducto =
+            producto.Precio * cantidad;
 
             dgvDetalleVenta.Rows.Add(
-                producto.Id,
-                producto.Nombre,
-                cantidad,
-                producto.Precio,
-                subtotal);
+            producto.Id,
+            producto.Nombre,
+            cantidad,
+            producto.Precio,
+            subtotalProducto);
 
-            total += subtotal;
+            subtotal += subtotalProducto;
 
-            lblTotal.Text = $"Bs. {total:F2}";
+            CalcularTotales();
+
+            lblTotalFinal.Text = $"Bs. {totalFinal:F2}";
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)        
         {
             if (dgvDetalleVenta.SelectedRows.Count > 0)
             {
-                decimal subtotal =
+                decimal subtotalProducto =
                     Convert.ToDecimal(
                         dgvDetalleVenta.SelectedRows[0]
-                        .Cells[4].Value);
+                        .Cells["CSubtotal"].Value);
 
-                total -= subtotal;
+                subtotal -= subtotalProducto;
 
-                lblTotal.Text = $"Bs. {total:F2}";
+                CalcularTotales();
+
+                lblTotalFinal.Text = $"Bs. {totalFinal:F2}";
 
                 dgvDetalleVenta.Rows.RemoveAt(
                     dgvDetalleVenta.SelectedRows[0].Index);
@@ -141,13 +146,43 @@ namespace Minisuper
 
                 return;
             }
+            if (numDescuento.Value > 20)
+            {
+                MessageBox.Show(
+                    "El descuento no puede superar el 20%.",
+                    "Validación");
+
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(
+    txtVendedor.Text))
+            {
+                MessageBox.Show(
+                    "Debe ingresar el nombre del vendedor.",
+                    "Validación");
+
+                txtVendedor.Focus();
+
+                return;
+            }
 
             VentaDAO ventaDAO = new VentaDAO();
+
+            decimal porcentaje =
+    numDescuento.Value;
+
+            decimal montoDescuento =
+                subtotal * porcentaje / 100;
 
             int ventaId =
                 ventaDAO.RegistrarVenta(
                     dtpFecha.Value,
-                    total);
+                    totalFinal,
+                    txtVendedor.Text,
+                    subtotal,
+                    porcentaje,
+                    montoDescuento,
+                    totalFinal);
 
             DetalleVentaDAO detalleDAO =
                 new DetalleVentaDAO();
@@ -179,9 +214,42 @@ namespace Minisuper
 
             dgvDetalleVenta.Rows.Clear();
 
-            total = 0;
+            subtotal = 0;
 
-            lblTotal.Text = "Bs. 0.00";
+            txtVendedor.Clear();
+
+            numDescuento.Value = 0;
+
+            lblSubtotal.Text = "Bs. 0.00";
+
+            lblMontoDescuento.Text = "Bs. 0.00";
+
+            lblTotalFinal.Text = "Bs. 0.00";
+        }
+        private void CalcularTotales()
+        {
+            decimal porcentaje =
+                numDescuento.Value;
+
+            decimal montoDescuento =
+                subtotal * porcentaje / 100;
+
+            totalFinal =
+                subtotal - montoDescuento;
+
+            lblSubtotal.Text =
+                $"Bs. {subtotal:F2}";
+
+            lblMontoDescuento.Text =
+                $"Bs. {montoDescuento:F2}";
+
+            lblTotalFinal.Text =
+                $"Bs. {totalFinal:F2}";
+        }
+
+        private void numDescuento_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularTotales();
         }
     }
 }
