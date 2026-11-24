@@ -308,11 +308,6 @@
             // numDescuento
             // 
             this.numDescuento.Location = new System.Drawing.Point(137, 96);
-            this.numDescuento.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
             this.numDescuento.Name = "numDescuento";
             this.numDescuento.Size = new System.Drawing.Size(153, 20);
             this.numDescuento.TabIndex = 8;

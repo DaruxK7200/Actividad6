@@ -93,26 +93,48 @@ namespace Minisuper
         private decimal subtotal = 0;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Producto producto =
-                (Producto)cmbProductos.SelectedItem;
+            try
+            {
+                if (cmbProductos.SelectedItem == null)
+                {
+                    MessageBox.Show(
+                        "Seleccione un producto antes de agregarlo a la venta.",
+                        "Producto requerido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-            int cantidad = (int)numericUpDown1.Value;
+                    return;
+                }
 
-            decimal subtotalProducto =
-            producto.Precio * cantidad;
+                Producto producto =
+                    (Producto)cmbProductos.SelectedItem;
 
-            dgvDetalleVenta.Rows.Add(
-            producto.Id,
-            producto.Nombre,
-            cantidad,
-            producto.Precio,
-            subtotalProducto);
+                int cantidad = (int)numericUpDown1.Value;
 
-            subtotal += subtotalProducto;
+                decimal subtotalProducto =
+                    producto.Precio * cantidad;
 
-            CalcularTotales();
+                dgvDetalleVenta.Rows.Add(
+                    producto.Id,
+                    producto.Nombre,
+                    cantidad,
+                    producto.Precio,
+                    subtotalProducto);
 
-            lblTotalFinal.Text = $"Bs. {totalFinal:F2}";
+                subtotal += subtotalProducto;
+
+                CalcularTotales();
+            }
+            catch (Exception ex)
+            {
+                Logger.Registrar(ex);
+
+                MessageBox.Show(
+                    "No se pudo agregar el producto. Verifique los datos e intente nuevamente.",
+                    "Error de operación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)        
@@ -139,29 +161,41 @@ namespace Minisuper
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (dgvDetalleVenta.Rows.Count == 0)
-            {
                 MessageBox.Show(
-                    "Debe agregar al menos un producto.",
-                    "Advertencia");
+                "Agregue al menos un producto antes de confirmar la venta.",
+                "Venta incompleta",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
-                return;
-            }
             if (numDescuento.Value > 20)
             {
                 MessageBox.Show(
-                    "El descuento no puede superar el 20%.",
-                    "Validación");
+                "El descuento máximo permitido es 20%. Ajuste el valor para continuar.",
+                "Política de descuentos",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
 
                 return;
             }
-            if (string.IsNullOrWhiteSpace(
-    txtVendedor.Text))
+            if (string.IsNullOrWhiteSpace(txtVendedor.Text))
             {
                 MessageBox.Show(
-                    "Debe ingresar el nombre del vendedor.",
-                    "Validación");
+                    "Ingrese el nombre del vendedor para registrar la venta.",
+                    "Información requerida",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 txtVendedor.Focus();
+
+                return;
+            }
+            if (dgvDetalleVenta.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(
+                    "Seleccione un producto de la lista para eliminarlo.",
+                    "Selección requerida",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 return;
             }
