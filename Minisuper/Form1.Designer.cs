@@ -30,9 +30,9 @@
         {
             this.panel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.CatalogoProductos = new System.Windows.Forms.Button();
-            this.Ventas = new System.Windows.Forms.Button();
             this.Compras = new System.Windows.Forms.Button();
+            this.Ventas = new System.Windows.Forms.Button();
+            this.CatalogoProductos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,53 +59,75 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Location = new System.Drawing.Point(12, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(148, 60);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Minisuper El Ahorro";
+            this.label1.Text = "Minisuper \r\nEl Ahorro";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // CatalogoProductos
-            // 
-            this.CatalogoProductos.Location = new System.Drawing.Point(23, 66);
-            this.CatalogoProductos.Name = "CatalogoProductos";
-            this.CatalogoProductos.Size = new System.Drawing.Size(108, 23);
-            this.CatalogoProductos.TabIndex = 1;
-            this.CatalogoProductos.Text = "Catálogo Productos";
-            this.CatalogoProductos.UseVisualStyleBackColor = true;
-            // 
-            // Ventas
-            // 
-            this.Ventas.Location = new System.Drawing.Point(34, 107);
-            this.Ventas.Name = "Ventas";
-            this.Ventas.Size = new System.Drawing.Size(75, 23);
-            this.Ventas.TabIndex = 1;
-            this.Ventas.Text = "Ventas";
-            this.Ventas.UseVisualStyleBackColor = true;
             // 
             // Compras
             // 
-            this.Compras.Location = new System.Drawing.Point(34, 145);
+            this.Compras.FlatAppearance.BorderSize = 0;
+            this.Compras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Compras.Location = new System.Drawing.Point(17, 161);
             this.Compras.Name = "Compras";
-            this.Compras.Size = new System.Drawing.Size(75, 23);
+            this.Compras.Size = new System.Drawing.Size(168, 27);
             this.Compras.TabIndex = 1;
             this.Compras.Text = "Compras";
             this.Compras.UseVisualStyleBackColor = true;
+            this.Compras.MouseEnter += new System.EventHandler(this.Compras_MouseEnter);
+            this.Compras.MouseLeave += new System.EventHandler(this.Compras_MouseLeave);
+            // 
+            // Ventas
+            // 
+            this.Ventas.FlatAppearance.BorderSize = 0;
+            this.Ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ventas.Location = new System.Drawing.Point(17, 123);
+            this.Ventas.Name = "Ventas";
+            this.Ventas.Size = new System.Drawing.Size(168, 27);
+            this.Ventas.TabIndex = 1;
+            this.Ventas.Text = "Ventas";
+            this.Ventas.UseVisualStyleBackColor = true;
+            this.Ventas.Click += new System.EventHandler(this.Ventas_Click_1);
+            this.Ventas.MouseEnter += new System.EventHandler(this.Ventas_MouseEnter);
+            this.Ventas.MouseLeave += new System.EventHandler(this.Ventas_MouseLeave);
+            // 
+            // CatalogoProductos
+            // 
+            this.CatalogoProductos.FlatAppearance.BorderSize = 0;
+            this.CatalogoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CatalogoProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatalogoProductos.Location = new System.Drawing.Point(17, 82);
+            this.CatalogoProductos.Name = "CatalogoProductos";
+            this.CatalogoProductos.Size = new System.Drawing.Size(168, 27);
+            this.CatalogoProductos.TabIndex = 1;
+            this.CatalogoProductos.Text = "Catálogo Productos";
+            this.CatalogoProductos.UseVisualStyleBackColor = true;
+            this.CatalogoProductos.MouseEnter += new System.EventHandler(this.CatalogoProductos_MouseEnter);
+            this.CatalogoProductos.MouseLeave += new System.EventHandler(this.CatalogoProductos_MouseLeave);
+            this.CatalogoProductos.MouseHover += new System.EventHandler(this.CatalogoProductos_MouseHover);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.label2.Location = new System.Drawing.Point(221, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 13);
+            this.label2.Size = new System.Drawing.Size(313, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Catálogo de Productos";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CCodigo,
@@ -114,8 +136,10 @@
             this.CStock});
             this.dataGridView1.Location = new System.Drawing.Point(224, 96);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(443, 150);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CCodigo
             // 
@@ -139,11 +163,14 @@
             // 
             // NuevoProducto
             // 
-            this.NuevoProducto.BackColor = System.Drawing.SystemColors.Highlight;
+            this.NuevoProducto.BackColor = System.Drawing.Color.SkyBlue;
+            this.NuevoProducto.FlatAppearance.BorderSize = 0;
+            this.NuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.NuevoProducto.Location = new System.Drawing.Point(653, 20);
             this.NuevoProducto.Name = "NuevoProducto";
-            this.NuevoProducto.Size = new System.Drawing.Size(108, 23);
+            this.NuevoProducto.Size = new System.Drawing.Size(108, 27);
             this.NuevoProducto.TabIndex = 1;
             this.NuevoProducto.Text = "+ Nuevo Producto";
             this.NuevoProducto.UseVisualStyleBackColor = false;
@@ -161,6 +188,7 @@
             this.Controls.Add(this.NuevoProducto);
             this.Name = "Form1";
             this.Text = "Catálogo de Productos";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
