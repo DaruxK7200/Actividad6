@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Minisuper.Datos;
+using Minisuper.Modelos;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Minisuper.Datos;
+using Minisuper.Modelos;
 
 namespace Minisuper
 {
@@ -34,22 +32,19 @@ namespace Minisuper
 
             dataGridView1.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
+            CargarProductos();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-
         private void NuevoProducto_Click(object sender, EventArgs e)
         {
             FrmNuevoProducto frm = new FrmNuevoProducto();
 
             frm.ShowDialog();
         }
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor =
@@ -58,21 +53,6 @@ namespace Minisuper
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor =
             Color.White;
         }
-
-        private void CatalogoProductos_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void CatalogoProductos_MouseEnter(object sender, EventArgs e)
-        {
-            CatalogoProductos.BackColor = Color.FromArgb(59, 130, 246);
-        }
-
-        private void CatalogoProductos_MouseLeave(object sender, EventArgs e)
-        {
-            CatalogoProductos.BackColor = Color.FromArgb(30, 41, 59);
-        }
-
         private void Ventas_MouseEnter(object sender, EventArgs e)
         {
             Ventas.BackColor = Color.FromArgb(59, 130, 246);
@@ -84,23 +64,33 @@ namespace Minisuper
             Ventas.BackColor = Color.FromArgb(30, 41, 59);
         }
 
-        private void Compras_MouseEnter(object sender, EventArgs e)
-        {
-            Compras.BackColor = Color.FromArgb(59, 130, 246);
-
-        }
-
-        private void Compras_MouseLeave(object sender, EventArgs e)
-        {
-            Compras.BackColor = Color.FromArgb(30, 41, 59);
-
-        }
-
         private void Ventas_Click_1(object sender, EventArgs e)
         {
             FrmVentas frmVentas = new FrmVentas();
 
             frmVentas.ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.ShowDialog();
+
+        }
+        private void CargarProductos()
+        {
+            ProductoDAO dao = new ProductoDAO();
+
+            dataGridView1.Rows.Clear();
+
+            foreach (Producto producto in dao.ObtenerProductos())
+            {
+                dataGridView1.Rows.Add(
+                    producto.Id,
+                    producto.Nombre,
+                    producto.Precio,
+                    producto.Stock);
+            }
         }
     }
 }
